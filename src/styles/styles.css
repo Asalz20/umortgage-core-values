@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Lato", sans-serif;
+}
+
+@media (min-width: 955px) {
+  body {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 955px) {
+  #root {
+    height: 100%;
+  }
+}
+
+.heading {
+  font-size: 2rem;
+  color: #7549ea;
+  padding: 2rem;
+  text-align: center;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 955px) {
+  section {
+    height: 100%;
+  }
+}
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  padding: 4rem 0;
+  max-width: 975px;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  height: 156px;
+}
+
+li:nth-child(odd) > button > .border {
+  padding-top: 2px;
+  padding-right: 2px;
+  border-radius: 20px 0 20px 0;
+  height: 161px;
+  width: 253px;
+  top: -11px;
+  left: 22px;
+  border-top: 1px dashed black;
+  border-right: 1px dashed black;
+  background: linear-gradient(
+    81deg,
+    rgba(113, 79, 233, 1) 39%,
+    rgba(6, 186, 210, 1) 74%
+  );
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+li:nth-child(even) > button > .border {
+  padding-top: 2px;
+  padding-right: 2px;
+  border-radius: 0 20px 0 20px;
+  height: 161px;
+  width: 266px;
+  top: 8px;
+  left: 12px;
+  border-top: 1px dashed black;
+  border-right: 1px dashed black;
+  background: linear-gradient(
+    81deg,
+    rgba(113, 79, 233, 1) 39%,
+    rgba(6, 186, 210, 1) 74%
+  );
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+.container-up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 265px;
+  max-width: 300px;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px 0 20px 0;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.container-up:hover {
+  transform: translate(7px, -8px);
+  cursor: pointer;
+}
+
+.container-down:hover:before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    147deg,
+    rgba(113, 79, 233, 1) 12%,
+    rgba(6, 186, 210, 1) 65%
+  );
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 40%;
+  animation: fill 2.5s ease-in-out forwards;
+  z-index: -1;
+}
+
+@keyframes fill {
+  from {
+    top: 165px;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    top: -50px;
+    transform: translate(-50%) rotate(360deg);
+  }
+}
+
+.container-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 265px;
+  max-width: 300px;
+  padding: 1.5rem;
+  border: 1px solid black;
+  border-radius: 0 20px 0 20px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bg-number {
+  background: linear-gradient(
+    121deg,
+    rgba(113, 79, 233, 1) 39%,
+    rgba(6, 186, 210, 1) 74%
+  );
+  border-radius: 50%;
+  padding: 1.5rem;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: 21px;
+  right: 103px;
+}
+
+.number {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1.5rem;
+  height: 1px;
+  width: 1px;
+  z-index: 1;
+  background-color: white;
+}
+
+h2 {
+  width: 233px;
+  font-weight: 100;
+}
+
+span {
+  font-weight: 900;
+}
+
+li:first-child > button > .container-up > h2 > span {
+  display: block;
+  text-align: center;
+}
+
+li:nth-child(2) > button > .container-down > h2 > span {
+  display: block;
+}
+
+li:nth-child(3) > button > .container-up > h2 {
+  width: 200px;
+}
+
+li:last-child > button > .container-up > h2 > span {
+  display: block;
+  text-align: center;
+}
+
+.info-container {
+  display: flex;
+  width: 287px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 103px;
+  left: -4px;
+  max-height: 0px;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.flex {
+  top: -16px;
+  max-height: 250px;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.55rem;
+  min-height: 200px;
+  background: white;
+}
